@@ -1,0 +1,18 @@
+LAYER
+  NAME 'regex04'
+  DATA 'data/minnesota_counties'
+  TYPE POLYGON
+  STATUS OFF
+  CLASS    
+    EXPRESSION ('[cty_name]' ~* 'C') # hilite
+    STYLE
+      COLOR 255 0 0
+      OUTLINECOLOR 181 181 181
+    END
+  END
+  CLASS
+    STYLE
+      OUTLINECOLOR 181 181 181
+    END
+  END
+END

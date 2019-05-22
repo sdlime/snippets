@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MapServer Snippets</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/jquery.dataTables.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" type="text/css"/>
+
+    <script src="snippets.js"></script>
+  </head>
+  <body>    
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="https://mapserver.org/"><img src="https://mapserver.org/_static/banner.png" height="50" alt=""></a>
+    </nav>
+
+    <main role="main" class="container">
+
+      <h1>Snippets</h1>
+
+      <p>MapServer snippets are a large collection of examples designed to showcase the myriad of configuration options and use cases available with the platform. Each snippet is/was developed to be as concise as possible and highlights the target topic without the baggage of a more complete demo application.</p>
+
+      <table id="snippets" width="100%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+      </table>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+      var table;
+      $(document).ready(function() {
+        table = $("#snippets").DataTable({
+          data: snippets,
+          columns: [
+            { data: function(row, type, val, meta) { return "<a href=\"snippet.html?id=" + row.id + "\">" + row.id + "</a>"; } },
+            { data: function(row, type, val, meta) { return row.description; } }
+          ]
+        });
+      });
+    </script>
+  </body>
+</html>

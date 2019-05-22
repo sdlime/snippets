@@ -1,0 +1,15 @@
+MAP
+  NAME 'snippets'
+
+  EXTENT 125000 4785000 789000 5489000
+  UNITS METERS
+
+  SIZE 500 500
+
+  INCLUDE 'snippets/color01.snippet'
+
+  INCLUDE 'snippets/regex01.snippet'
+  INCLUDE 'snippets/regex02.snippet'
+  INCLUDE 'snippets/regex03.snippet'
+  INCLUDE 'snippets/regex04.snippet'
+END

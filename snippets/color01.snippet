@@ -1,0 +1,33 @@
+LAYER
+  NAME 'color01'
+  DATA 'data/minnesota_counties'
+  TYPE POLYGON
+  STATUS OFF
+  CLASSITEM 'cty_abbr'
+  CLASS    
+    EXPRESSION 'ANOK'
+    STYLE
+      COLOR 0 0 255 # hilite
+      OUTLINECOLOR 181 181 181
+    END
+  END
+  CLASS
+    EXPRESSION 'STLO'
+    STYLE
+      COLOR "#0000FF" # hilite
+      OUTLINECOLOR 181 181 181
+    END
+  END
+  CLASS
+    EXPRESSION 'ITAS'
+    STYLE
+      COLOR "#0000FF66" # hilite
+      OUTLINECOLOR 181 181 181
+    END
+  END
+  CLASS
+    STYLE
+      OUTLINECOLOR 181 181 181
+    END
+  END
+END
