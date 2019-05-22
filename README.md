@@ -1,6 +1,8 @@
 # Snippets
 MapServer snippets are a large collection of examples designed to showcase the myriad of configuration options and use cases available with the platform. Each snippet is/was developed to be as concise as possible and highlights the target topic without the baggage of a more complete demo application.
 
+The snippets website is generated from snippet metadata and consists of two components. First, an index.html page that presents a searchable interface of all snippets and second, a page to render any snippet given a snippets ID. The website relies on common web resources including jQuery, Bootstrap, Underscore.js and DataTables.
+
 ## Setup (web server)
 1) Clone the repo on your machine. 
 2) Create a symlink to the htdocs directory from within your web server's document root.
