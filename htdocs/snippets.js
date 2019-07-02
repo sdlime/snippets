@@ -1,4 +1,4 @@
-var mapserv = '/cgi-bin/mapserv72';
+var mapserv = '/cgi-bin/mapserv74';
 var mapfile = 'MAPSERVER_SNIPPETS';
 
 var snippets = [
