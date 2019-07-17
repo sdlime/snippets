@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MapServer OpenLayers</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" type="text/css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css" type="text/css">
+    <link rel="stylesheet" href="css/ol-popup.css" type="text/css">
+
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js"></script>
+
+  </head>
+  <body>
+    <div id="mapid" class="map"></div>
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <select id="layers">
+        <option>
+      </select>
+      <div id="popup-content"></div>
+    </div>
+    <script>
+      /*
+      import Map from 'ol/Map.js';
+      import View from 'ol/View.js';
+      import TileLayer from 'ol/layer/Tile.js';
+      import OSM from 'ol/source/OSM.js';
+      import GeoJSON from 'ol/format/GeoJSON.js';
+      import Circle from 'ol/geom/Circle.js';
+      import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
+      import {OSM, Vector as VectorSource} from 'ol/source.js';
+      import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style.js';
+      */
+
+
+      var mymap = new ol.Map({
+        target: 'mapid',
+        view: new ol.View({
+          center: ol.proj.fromLonLat(center),
+          zoom: zoom
+        })
+      });
+
+      if (tilelayers) {
+        mymap.addLayer(
+          new ol.layer.Tile({
+            source: new ol.source.TileWMS({
+            // source: new ol.source.WMTS({
+              url: mapserv,
+              params: {
+                'MAP': mapfile,
+                'LAYERS': tilelayers
+              },
+              serverType: 'mapserver'
+            })
+          })
+        )
+      }
+
+      if (wmslayers) {
+        mymap.addLayer(
+          new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+              url: mapserv,
+              params: {
+                'MAP': mapfile,
+                'LAYERS': wmslayers
+              },
+              serverType: 'mapserver'
+            })
+          })
+        )
+      }
+
+      if (wfslayer) {
+        mymap.addLayer(
+          new ol.layer.Vector({
+            source: new ol.source.Vector({
+              projection : 'EPSG:3857',
+              // features: (new ol.format.GeoJSON()).readFeatures(geodata),
+              // url: baseurl + wfsparams + wfslayer + wfsfilter,
+              url: baseurl + wfsparams + wfslayer,
+              format: new ol.format.GeoJSON()
+            })
+          })
+        )
+      }
+
+      /* popup stuff below here */
+      /**
+       * Elements that make up the popup.
+       */
+      var container = document.getElementById('popup');
+      var content = document.getElementById('popup-content');
+      var closer = document.getElementById('popup-closer');
+
+      /**
+       * Create an overlay to anchor the popup to the map.
+       */
+      var overlay = new ol.Overlay({
+        element: container,
+        autoPan: true,
+        autoPanAnimation: {
+          duration: 250
+        }
+      });
+
+      /**
+       * Add a click handler to hide the popup.
+       * @return {boolean} Don't follow the href.
+       */
+      closer.onclick = function() {
+        overlay.setPosition(undefined);
+        closer.blur();
+        return false;
+      };
+
+      mymap.addOverlay(overlay);  // for popup
+      mymap.on('click', function(evt) {
+        map.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
+          let attributes = '';
+          for (key in feature.getProperties()) {
+            if (key !== 'geometry') {
+              attributes += key + ':&nbsp;' + feature.get(key) + '<br>';
+            }
+          }
+          content.innerHTML = attributes;
+          var coordinate = evt.coordinate;
+          overlay.setPosition(coordinate);
+        });
+      });
+    </script>
+  </body>
+</html>
