@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MapServer Leaflet</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+  <script src="js/leaflet.wms.js"></script>
+  <script src="snippets.js"></script>
+
+</head>
+
+<body>
+
+  <div id="mapid" style="width: 100%; height: 600px;"></div>
+
+  <script>
+    var mymap = L.map('mapid').setView(center, zoom);
+
+    // wfs geoJson layer
+    if (wfslayer) {
+      fetch(baseurl + wfsparams + wfslayer /* + wfsfilter */)
+        .then(response => response.json())
+        .then(myJson => L.geoJson(myJson).addTo(mymap))
+        .catch(error => console.log('fetch failed:', error.message))
+    }
+
+    if (tilelayers) {
+      L.tileLayer.wms(baseurl, {
+        layers: tilelayers,
+        format: 'image/png',
+        transparent: true,
+        attribution: '<a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a>'
+        // maxZoom: 18,
+      }).addTo(mymap);
+    }
+
+    if (wmslayers) {
+      L.WMS.overlay(baseurl, {
+        layers: wmslayers,
+        format: 'image/png',
+        transparent: true,
+        attribution: '<a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a>'
+        // maxZoom: 18,
+      }).addTo(mymap);
+    }
+
+
+    var popup = L.popup();
+    function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked at " + e.latlng.toString())
+        .openOn(mymap);
+    }
+    mymap.on('click', onMapClick);
+  </script>
+</body>
+</html>

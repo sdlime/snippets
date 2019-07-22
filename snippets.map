@@ -3,13 +3,49 @@ MAP
 
   EXTENT 125000 4785000 789000 5489000
   UNITS METERS
-
   SIZE 500 500
 
-  INCLUDE 'snippets/color01.snippet'
+  SHAPEPATH ./data
+  IMAGETYPE png # req'd for native mapserv protocol
 
+  WEB
+    METADATA
+      "wms_title"  "OWS Demo Server"
+      "ows_enable_request"  "*"
+      "wms_onlineresource"  "http://my.host.com/cgi-bin/mapserv?map=ows.map&"
+      "wfs_getfeature_formatlist"  "gml,geojson"
+      "ows_srs"  "EPSG:4326 EPSG:3857"
+    END
+  END  # web
+
+  OUTPUTFORMAT
+    NAME "geojson"
+    DRIVER "OGR/GEOJSON"
+    MIMETYPE "application/json; subtype=geojson"
+    FORMATOPTION "STORAGE=stream"
+    FORMATOPTION "FORM=SIMPLE"
+    FORMATOPTION "USE_FEATUREID=true"
+  END
+
+  PROJECTION # default projection
+    "init=epsg:3857" # web mercator
+    # "init=epsg:4326" # wgs84 lat/long
+  END    
+
+  SCALEBAR
+    STYLE 0
+    INTERVALS 2
+    COLOR "#000000"
+    #  BACKGROUNDCOLOR "#999999"
+    OUTLINECOLOR "#000000"
+  END
+
+  INCLUDE 'snippets/color01.snippet'
   INCLUDE 'snippets/regex01.snippet'
   INCLUDE 'snippets/regex02.snippet'
   INCLUDE 'snippets/regex03.snippet'
   INCLUDE 'snippets/regex04.snippet'
+  INCLUDE 'snippets/hypsometric.snippet'
+  INCLUDE 'snippets/populated-places.snippet'
+
 END

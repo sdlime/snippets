@@ -1,0 +1,94 @@
+LAYER # "Natural Earth  Populated Places"
+  NAME "populated-places"
+  STATUS off
+  TYPE point
+  PROJECTION
+    "init=epsg:4326"
+  END
+  DATA "data/ne_10m_populated_places"
+  METADATA
+    "wfs_title"           "Natural Earth Populated Places" ##REQUIRED
+    "wfs_srs"             "EPSG:4326" ## REQUIRED
+    "wfs_enable_request"  "*"
+    "gml_featureid"       "ne_id"
+    "gml_include_items"   "NAME,SCALERANK"
+  END
+  LABELITEM "NAME"
+  CLASSITEM "SCALERANK"
+  CLASS
+    EXPRESSION '0'
+    LABEL
+      SIZE 14
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 591657550.5 # hilite
+    EXPRESSION '1'
+    LABEL
+      SIZE 12
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 295828775.3 # hilite
+    EXPRESSION '2'
+    LABEL
+      SIZE 10
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 147914387.6 # hilite
+    EXPRESSION '3'
+    LABEL
+      SIZE 8
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 73957193.82 # hilite
+    EXPRESSION '4'
+    LABEL
+      SIZE 6
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 36978596.91 # hilite
+    EXPRESSION '5'
+    LABEL
+      SIZE 6
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 18489298.45 # hilite
+    EXPRESSION '6'
+    LABEL
+      SIZE 6
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 9244649.227 # hilite
+    EXPRESSION '7'
+    LABEL
+      SIZE 6
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 4622324.614 # hilite
+    EXPRESSION '8'
+    LABEL
+      SIZE 6
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 2311162.307 # hilite
+    EXPRESSION '0'
+    LABEL
+      SIZE 6
+    END
+  END
+  CLASS
+    MAXSCALEDENOM 1155581.153 # hilite
+    EXPRESSION '10'
+    LABEL
+      SIZE 6
+    END
+  END
+END
