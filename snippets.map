@@ -46,6 +46,6 @@ MAP
   INCLUDE 'snippets/regex03.snippet'
   INCLUDE 'snippets/regex04.snippet'
   INCLUDE 'snippets/hypsometric.snippet'
-  INCLUDE 'snippets/populated-places.snippet'
+  INCLUDE 'snippets/label01.snippet'
 
 END

@@ -1,20 +1,18 @@
-LAYER # "Natural Earth  Populated Places"
-  NAME "populated-places"
-  STATUS off
-  TYPE point
+LAYER
+  NAME "label01"
+  STATUS OFF
+  TYPE POINT
   PROJECTION
     "init=epsg:4326"
   END
   DATA "data/ne_10m_populated_places"
   METADATA
-    "wfs_title"           "Natural Earth Populated Places" ##REQUIRED
-    "wfs_srs"             "EPSG:4326" ## REQUIRED
-    "wfs_enable_request"  "*"
-    "gml_featureid"       "ne_id"
-    "gml_include_items"   "NAME,SCALERANK"
+    "wms_title"           "Natural Earth Populated Places" ##REQUIRED
+    "wms_srs"             "EPSG:4326" ## REQUIRED
+    "wms_enable_request"  "getmap"
   END
-  LABELITEM "NAME"
-  CLASSITEM "SCALERANK"
+  LABELITEM "NAME" # hilite
+  CLASSITEM "SCALERANK" # hilite
   CLASS
     EXPRESSION '0'
     LABEL

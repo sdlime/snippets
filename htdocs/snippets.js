@@ -49,7 +49,7 @@ var snippets = [
         'image_url': mapserv + '?map=' + mapfile + '&layer=color01&mode=map',
         'mapfile_url': 'snippets/color01.snippet',
         'leaflet_url':'leaflet.html?wmslayers=color01',
-        'openlayers_url': 'openlayers.html?wmslayers=color01',        
+        'openlayers_url': 'openlayers.html?wmslayers=color01',
         'tags': ['style', 'color']
     }, {
         'id': 'regex01',
@@ -112,16 +112,16 @@ var snippets = [
         'openlayers_url': 'openlayers.html?wmslayers=hypsometric',
         'tags': ['raster', 'map file']
     }, {
-        'id': 'popplace',
-        'last_updated': '2019-05-21',
-        'author': '@greenwood',
+        'id': 'label01',
+        'last_updated': '2019-07-05',
+        'author': '@greenwoodmap',
         'type': 'image',
-        'title': 'point layer',
-        'description': 'Labeling at different scales',
-        'image_url': mapserv + '?map=' + mapfile + '&layer=populated-places&mode=map',
-        'mapfile_url': 'snippets/populated-places.snippet',
-        'leaflet_url':'leaflet.html?wmslayers=populated-places',
-        'openlayers_url': 'openlayers.html?wmslayers=populated-places',
+        'title': 'Labeling at Different Scales',
+        'description': 'Scale-dependent labeling - in this case using classes and an item related to place size. Successively smaller places are labeled are larger scales.',
+        'image_url': mapserv + '?map=' + mapfile + '&layer=label01&mode=map',
+        'mapfile_url': 'snippets/label01.snippet',
+        'leaflet_url':'leaflet.html?wmslayers=label01',
+        'openlayers_url': 'openlayers.html?wmslayers=label01',
         'tags': ['point','label']
     }
 ];
