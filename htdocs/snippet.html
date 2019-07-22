@@ -39,8 +39,8 @@
       <img alt="snippet output image" src="<%= snippet.image_url %>">
       <div style="padding-top:10px;">
         <a target="_blank" class="btn btn-primary" href="<%= snippet.image_url %>" role="button"><i class="fa fa-external-link" aria-hidden="true"></i> open in new tab</a>
-        <a target="_blank" class="btn btn-primary" href="<%= snippet.leaflet_url %>" role="button"><i class="fa fa-external-link" aria-hidden="true"></i> Leaflet</a>
-        <a target="_blank" class="btn btn-primary" href="<%= snippet.openlayers_url %>" role="button"><i class="fa fa-external-link" aria-hidden="true"></i> OpenLayers</a>
+        <% if(snippet.leaflet_url) { %><a target="_blank" class="btn btn-primary" href="<%= snippet.leaflet_url %>" role="button"><i class="fa fa-external-link" aria-hidden="true"></i> Leaflet</a><% } %>
+        <% if(snippet.openlayers_url) { %><a target="_blank" class="btn btn-primary" href="<%= snippet.openlayers_url %>" role="button"><i class="fa fa-external-link" aria-hidden="true"></i> OpenLayers</a><% } %>
         <button id="output_image_copy_button" class="btn btn-primary" data-clipboard-text="<%= location.hostname + snippet.image_url %>"><i class="fa fa-clipboard" aria-hidden="true"></i> copy url</button>
       </div>
     </script>

@@ -60,8 +60,8 @@ var snippets = [
         'description': 'Simple filtering based on an attribute and a regular expression.',
         'image_url': mapserv + '?map=' + mapfile + '&layer=regex01&mode=map',
         'mapfile_url': 'snippets/regex01.snippet',
-        'leaflet_url':'leaflet.html?wmslayers=regex01',
-        'openlayers_url': 'openlayers.html?wmslayers=regex01',        
+        'leaflet_url': null,
+        'openlayers_url': null,
         'tags': ['expression', 'regex']
     }, {
         'id': 'regex02',
@@ -72,8 +72,8 @@ var snippets = [
         'description': 'Simple filtering based on an attribute and a case-insensitive regular expression.',
         'image_url': mapserv + '?map=' + mapfile + '&layer=regex02&mode=map',
         'mapfile_url': 'snippets/regex02.snippet',
-        'leaflet_url':'leaflet.html?wmslayers=regex02',
-        'openlayers_url': 'openlayers.html?wmslayers=regex02',
+        'leaflet_url': null,
+        'openlayers_url': null,
         'tags': ['expression', 'regex']
     }, {
         'id': 'regex03',
@@ -84,8 +84,8 @@ var snippets = [
         'description': 'Simple filtering based on an attribute using a regular expression inside a logical expression.',
         'image_url': mapserv + '?map=' + mapfile + '&layer=regex03&mode=map',
         'mapfile_url': 'snippets/regex03.snippet',
-        'leaflet_url':'leaflet.html?wmslayers=regex03',
-        'openlayers_url': 'openlayers.html?wmslayers=regex03',       
+        'leaflet_url': null,
+        'openlayers_url': null,       
         'tags': ['expression', 'logical', 'regex']
     }, {
         'id': 'regex04',
@@ -96,8 +96,8 @@ var snippets = [
         'description': 'Simple filtering based on an attribute using a case-insensitive regular expression inside a logical expression.',
         'image_url': mapserv + '?map=' + mapfile + '&layer=regex04&mode=map',
         'mapfile_url': 'snippets/regex04.snippet',
-        'leaflet_url':'leaflet.html?wmslayers=regex04',
-        'openlayers_url': 'openlayers.html?wmslayers=regex04',        
+        'leaflet_url': null,
+        'openlayers_url': null,
         'tags': ['expression', 'logical', 'regex']
     }, {
         'id': 'raster',
@@ -117,7 +117,7 @@ var snippets = [
         'author': '@greenwoodmap',
         'type': 'image',
         'title': 'Labeling at Different Scales',
-        'description': 'Scale-dependent labeling - in this case using classes and an item related to place size. Successively smaller places are labeled are larger scales.',
+        'description': 'Scale-dependent labeling - in this case using classes and an item related to place size. Successively smaller places are labeled are larger scales. Larger places are also labeled using a larger font.',
         'image_url': mapserv + '?map=' + mapfile + '&layer=label01&mode=map',
         'mapfile_url': 'snippets/label01.snippet',
         'leaflet_url':'leaflet.html?wmslayers=label01',
