@@ -100,17 +100,17 @@ var snippets = [
         'openlayers_url': null,
         'tags': ['expression', 'logical', 'regex']
     }, {
-        'id': 'raster',
+        'id': 'raster01',
         'last_updated': '2019-07-05',
         'author': '@greenwoodmap',
         'type': 'image',
-        'title': 'Raster Layer',
-        'description': 'Raster example',
-        'image_url': mapserv + '?map=' + mapfile + '&layer=hypsometric&mode=map',
-        'mapfile_url': 'snippets/hypsometric.snippet',
-        'leaflet_url':'leaflet.html?wmslayers=hypsometric',
-        'openlayers_url': 'openlayers.html?wmslayers=hypsometric',
-        'tags': ['raster', 'map file']
+        'title': 'Simple Raster Layer',
+        'description': 'Simple raster layer display.',
+        'image_url': mapserv + '?map=' + mapfile + '&layer=raster01&mode=map',
+        'mapfile_url': 'snippets/raster01.snippet',
+        'leaflet_url':'leaflet.html?wmslayers=raster01',
+        'openlayers_url': 'openlayers.html?wmslayers=raster01',
+        'tags': ['raster', 'gdal']
     }, {
         'id': 'label01',
         'last_updated': '2019-07-05',

@@ -40,12 +40,16 @@ MAP
     OUTLINECOLOR "#000000"
   END
 
+  # Using MNDNR Data
+  #
   INCLUDE 'snippets/color01.snippet'
   INCLUDE 'snippets/regex01.snippet'
   INCLUDE 'snippets/regex02.snippet'
   INCLUDE 'snippets/regex03.snippet'
   INCLUDE 'snippets/regex04.snippet'
-  INCLUDE 'snippets/hypsometric.snippet'
-  INCLUDE 'snippets/label01.snippet'
 
+  # Using Natural Earth Data
+  #
+  INCLUDE 'snippets/raster01.snippet'
+  INCLUDE 'snippets/label01.snippet'
 END
