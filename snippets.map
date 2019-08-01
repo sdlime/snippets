@@ -1,22 +1,27 @@
 MAP
   NAME 'snippets'
 
-  EXTENT 125000 4785000 789000 5489000
+  EXTENT -20026376.39 -20048966.10 20026376.39 20048966.10
   UNITS METERS
+
   SIZE 500 500
 
   SHAPEPATH ./data
-  IMAGETYPE png # req'd for native mapserv protocol
+  IMAGETYPE PNG
+
+  PROJECTION
+    "init=epsg:3857" # web Mercator
+  END    
 
   WEB
     METADATA
-      "wms_title"  "OWS Demo Server"
+      "wms_title"  "MapServer Snippets"
       "ows_enable_request"  "*"
       "wms_onlineresource"  "http://my.host.com/cgi-bin/mapserv?map=ows.map&"
       "wfs_getfeature_formatlist"  "gml,geojson"
       "ows_srs"  "EPSG:4326 EPSG:3857"
     END
-  END  # web
+  END
 
   OUTPUTFORMAT
     NAME "geojson"
@@ -26,11 +31,6 @@ MAP
     FORMATOPTION "FORM=SIMPLE"
     FORMATOPTION "USE_FEATUREID=true"
   END
-
-  PROJECTION # default projection
-    "init=epsg:3857" # web mercator
-    # "init=epsg:4326" # wgs84 lat/long
-  END    
 
   SCALEBAR
     STYLE 0

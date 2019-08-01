@@ -23,7 +23,7 @@ function urlParamsToJSON() {  // eslint-disable-line no-unused-vars
   }
 
 var urlParams = urlParamsToJSON();
-var mapserv = urlParams.mapserv || '/cgi-bin/mapserv74';
+var mapserv = urlParams.mapserv || '/cgi-bin/mapserv';
 var mapfile = urlParams.mapfile || 'MAPSERVER_SNIPPETS';
 var baseurl = mapserv + '?MAP=' + mapfile;
 var center = urlParams.center ? JSON.parse(urlParams.center) : [30,40];

@@ -1,9 +1,10 @@
 LAYER
   NAME 'regex02'
-  DATA 'data/minnesota_counties'
+  DATA 'data/natural_earth_vector/50m_cultural/ne_50m_admin_0_countries'
+  PROJECTION "init=EPSG:4326" END
   TYPE POLYGON
   STATUS OFF
-  CLASSITEM 'cty_name'
+  CLASSITEM 'NAME'
   CLASS
     EXPRESSION /C/i # hilite
     STYLE

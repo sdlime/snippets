@@ -9,6 +9,7 @@
     <style>
       .hilite { background-color: yellow; }
     </style>
+    <script src="js/utility.js"></script>
     <script src="snippets.js"></script>
   </head>
   <body>
@@ -26,8 +27,8 @@
       <h2><%= snippet.title %></h2>
       <p><%= snippet.description %></p>
       <div class="row">
-        <div class="col-sm"><h3>Input</h3><div id="input" class="card card-body bg-light"></div></div>
-        <div class="col-sm"><h3>Output</h3><div id="output"></div></div>
+        <div class="col-sm-6"><h3>Input</h3><div id="input" class="card card-body bg-light"></div></div>
+        <div class="col-sm-6"><h3>Output</h3><div id="output"></div></div>
       </div>
       <div>
         <strong>Author:</strong> <%= snippet.author %><br/>
@@ -76,22 +77,6 @@
         });
 
         return lines.join("\r");
-      }
-      function decode(string) {
-        return unescape(string.replace(/\+/g, " "));
-      }
-      function getargs() {
-        var args = new Object();
-        var query = location.search.substring(1);
-        var pairs = query.split("&");
-        for(var i = 0; i < pairs.length; i++) {
-          var pos = pairs[i].indexOf('=');
-          if (pos == -1) continue;
-          var argname = pairs[i].substring(0,pos);
-          var value = pairs[i].substring(pos+1);
-          args[argname] = decode(value);
-        }
-        return args;
       }
 
       $(document).ready(function() {        
