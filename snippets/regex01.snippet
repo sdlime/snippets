@@ -1,10 +1,13 @@
 LAYER
-  NAME 'regex01'
-  DATA 'data/natural_earth_vector/50m_cultural/ne_50m_admin_0_countries'
+  NAME "regex01"
+  DATA "data/natural_earth_vector/50m_cultural/ne_50m_admin_0_countries"
   PROJECTION "init=EPSG:4326" END
+  METADATA
+    "wms_title" "regex01"
+  END
   TYPE POLYGON
   STATUS OFF
-  CLASSITEM 'NAME'
+  CLASSITEM "NAME"
   CLASS    
     EXPRESSION /C/ # hilite
     STYLE

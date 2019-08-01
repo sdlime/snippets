@@ -1,90 +1,86 @@
 LAYER
   NAME "label01"
-  STATUS OFF
   TYPE POINT
-  PROJECTION
-    "init=epsg:4326"
-  END
-  DATA "data/ne_10m_populated_places"
+  DATA "data/natural_earth_vector/50m_cultural/ne_50m_populated_places"
+  PROJECTION "init=epsg:4326" END
   METADATA
-    "wms_title"           "Natural Earth Populated Places" ##REQUIRED
-    "wms_srs"             "EPSG:4326" ## REQUIRED
-    "wms_enable_request"  "getmap"
+    "wms_title" "label01"
   END
+  STATUS OFF
   LABELITEM "NAME" # hilite
   CLASSITEM "SCALERANK" # hilite
   CLASS
-    EXPRESSION '0'
+    EXPRESSION "0"
     LABEL
       SIZE 14
     END
   END
   CLASS
     MAXSCALEDENOM 591657550.5 # hilite
-    EXPRESSION '1'
+    EXPRESSION "1"
     LABEL
       SIZE 12
     END
   END
   CLASS
     MAXSCALEDENOM 295828775.3 # hilite
-    EXPRESSION '2'
+    EXPRESSION "2"
     LABEL
       SIZE 10
     END
   END
   CLASS
     MAXSCALEDENOM 147914387.6 # hilite
-    EXPRESSION '3'
+    EXPRESSION "3"
     LABEL
       SIZE 8
     END
   END
   CLASS
     MAXSCALEDENOM 73957193.82 # hilite
-    EXPRESSION '4'
+    EXPRESSION "4"
     LABEL
       SIZE 6
     END
   END
   CLASS
     MAXSCALEDENOM 36978596.91 # hilite
-    EXPRESSION '5'
+    EXPRESSION "5"
     LABEL
       SIZE 6
     END
   END
   CLASS
     MAXSCALEDENOM 18489298.45 # hilite
-    EXPRESSION '6'
+    EXPRESSION "6"
     LABEL
       SIZE 6
     END
   END
   CLASS
     MAXSCALEDENOM 9244649.227 # hilite
-    EXPRESSION '7'
+    EXPRESSION "7"
     LABEL
       SIZE 6
     END
   END
   CLASS
     MAXSCALEDENOM 4622324.614 # hilite
-    EXPRESSION '8'
+    EXPRESSION "8"
     LABEL
       SIZE 6
     END
   END
   CLASS
     MAXSCALEDENOM 2311162.307 # hilite
-    EXPRESSION '9'
+    EXPRESSION "9"
     LABEL
       SIZE 6
     END
   END
   CLASS
     MAXSCALEDENOM 1155581.153 # hilite
-    EXPRESSION '10'
+    EXPRESSION "10"
     LABEL
       SIZE 6
     END

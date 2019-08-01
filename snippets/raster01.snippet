@@ -1,12 +1,10 @@
 LAYER
-  NAME 'hypsometric'
-  DATA 'raster/HYP_50M_SR_W_YCBCR.tif'
-  TYPE raster
-  STATUS off
-  PROJECTION
-    'init=epsg:4326'
+  NAME "raster01"
+  DATA "natural_earth_raster/50m_raster/HYP_50M_SR/HYP_50M_SR.tif"
+  PROJECTION "init=epsg:4326" END
+  METADATA
+    "wms_title" "raster01"
   END
-  CLASS
-    NAME 'Natural Earth  1:50m Cross-blended Hypsometric Tints'
-  END
+  TYPE RASTER
+  STATUS OFF
 END
